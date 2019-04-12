@@ -32,5 +32,5 @@ app.use(express.urlencoded({ extended: true }));
 app.use(`/files`, express.static(path.resolve(__dirname, `..`, `tmp`)));
 app.use(require('./routes'));
 
-const port = 3333;
+const port = process.env.PORT || 3333;
 server.listen(port, () => console.log(`Running on port ${port}`));
